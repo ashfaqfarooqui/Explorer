@@ -1,0 +1,13 @@
+{
+  "name": "transitionSystem",
+  "description": "A starter project for Patrik",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "bootstrap": "3.2.0",
+    "font-awesome": "4.2.0"
+  }
+}

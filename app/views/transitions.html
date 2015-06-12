@@ -1,0 +1,19 @@
+<h3>Transitions</h3>
+<label>Filter: <input ng-model="transitionsView.filterQuery"></label>
+<label>Only show enabled: <input type="checkbox" ng-model="transitionsView.onlyShowEnabled"></label>
+<ul class="list-group"
+    ng-repeat="obj in protocol.transitions | orderBy:'name' | filter:transitionsView.filterQuery | filter:transitionsView_filterOnlyShowEnabled">
+    <li class={{transitionsView_transitionBoxColor(obj)}}>
+        <div class="row">
+            <div class="col-xs-8">
+                <b ng-if="obj.enabled=='false'">{{obj.name}}</b>
+                <b ng-if="obj.enabled=='true' && !allViews.transAreClickable">{{obj.name}}</b>
+                <b ng-if="obj.enabled=='true' && allViews.transAreClickable"><a ng-click="clickTransition(obj.name)">{{obj.name}}</a></b>
+            </div>
+            <div class="col-xs-4 text-right">
+                <a ng-click="show=!show" class="small">show {{show ? "less" : "more"}}</a>
+            </div>
+        </div>
+        <div ng-include="'views/partials/keyValueJson.html'"></div>
+    </li>
+</ul>

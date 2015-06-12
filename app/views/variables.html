@@ -1,0 +1,25 @@
+<h3>Variables</h3>
+<div class="row">
+    <div class="col-xs-6">
+        <label>Filter: <input ng-model="variablesView.filterQuery"></label>
+    </div>
+    <div class="col-xs-6 text-right">
+        <a ng-click="clickState()" type="button" class={{variablesView.stateInDropdownIsSafeButtonColor}}><b>{{variablesView.stateInDropdownIsSafeButtonText}}</b></a><br/>
+    </div>
+</div>
+<ul class="list-group" ng-repeat="obj in protocol.variables | orderBy:'nameToShow' | filter:variablesView.filterQuery">
+    <li class={{variablesView_variableBoxColor(obj)}}>
+        <div class="row">
+            <div class="col-xs-4">
+                <b>{{obj.nameToShow}}:</b> <i>{{obj.activeValue}}</i>
+            </div>
+            <div class="col-xs-4">
+                <select ng-model="obj.setToValue" ng-click="checkState()" ng-options="v for v in obj.domain"></select>
+            </div>
+            <div class="col-xs-4 text-right">
+                <a ng-click="show=!show" class="small">show {{show ? "less" : "more"}}</a>
+            </div>
+        </div>
+        <div ng-include="'views/partials/keyValueJson.html'"></div>
+    </li>
+</ul>

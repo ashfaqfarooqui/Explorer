@@ -1,0 +1,10 @@
+update
+reload
+compile
+inspect
+inspect dependency
+update
+resolvers
+reload
+update
+exit

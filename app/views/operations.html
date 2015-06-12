@@ -1,0 +1,22 @@
+<h3>Operations</h3>
+<label>Filter: <input ng-model="operationsView.filterQuery"></label>
+<label>Only show startable: <input type="checkbox" ng-model="operationsView.onlyShowStartable"></label>
+<label>executing: <input type="checkbox" ng-model="operationsView.onlyShowExecuting"></label>
+<label>exectued at least once: <input type="checkbox" ng-model="operationsView.onlyShowExecutedAtLeastOnce"></label>
+<ul class="list-group"
+    ng-repeat="obj in protocol.operations | orderBy:'name' | filter:operationsView.filterQuery | filter:operationsView_filterOnlyShow">
+    <li class={{operationsView_operationBoxColor(obj)}}>
+        <div class="row">
+            <div class="col-xs-8">
+                <b ng-if="obj.startable=='false'">{{obj.name}}</b>
+                <b ng-if="obj.startable=='true' && !allViews.transAreClickable">{{obj.name}}</b>
+                <b ng-if="obj.startable=='true' && allViews.transAreClickable"><a ng-click="clickTransition(obj.startTrans)">{{obj.name}}</a></b>
+                <span class="badge">{{obj.nbrOfExecutions}}</span>
+            </div>
+            <div class="col-xs-4 text-right">
+                <a ng-click="show=!show" class="small">show {{show ? "less" : "more"}}</a>
+            </div>
+        </div>
+        <div ng-include="'views/partials/keyValueJson.html'"></div>
+    </li>
+</ul>

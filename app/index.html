@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="tsApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transition system</title>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <link href="styles/custom.css" rel="stylesheet">
+  <script src="scripts/controllers/controllers.js"></script>
+  <script src="scripts/app.js"></script>
+</head>
+<body ng-controller="tsController1">
+<div class="container-fluid">
+  <div ng-include="'views/partials/header.html'"></div>
+  <div ng-view></div>
+</div>
+</body>
+</html>

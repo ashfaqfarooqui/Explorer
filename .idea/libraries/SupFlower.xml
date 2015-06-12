@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SupFlower">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/SupFlower.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/SupFlower.jar!/" />
+    </SOURCES>
+  </library>
+</component>
